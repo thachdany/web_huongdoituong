@@ -1,0 +1,10 @@
+D:\xddt\setuplai\Solution1\XuLy\bin\Release\XuLy.dll
+D:\xddt\setuplai\Solution1\XuLy\bin\Release\XuLy.pdb
+D:\xddt\setuplai\Solution1\XuLy\bin\Release\ClassLibrary1.dll
+D:\xddt\setuplai\Solution1\XuLy\bin\Release\ClassLibrary1.pdb
+D:\xddt\setuplai\Solution1\XuLy\bin\Release\ClassLibrary1.dll.config
+D:\xddt\setuplai\Solution1\XuLy\obj\Release\XuLy.csprojAssemblyReference.cache
+D:\xddt\setuplai\Solution1\XuLy\obj\Release\XuLy.csproj.CoreCompileInputs.cache
+D:\xddt\setuplai\Solution1\XuLy\obj\Release\XuLy.csproj.CopyComplete
+D:\xddt\setuplai\Solution1\XuLy\obj\Release\XuLy.dll
+D:\xddt\setuplai\Solution1\XuLy\obj\Release\XuLy.pdb

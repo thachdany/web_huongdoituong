@@ -1,0 +1,16 @@
+D:\xddt\setuplai\Solution1\GUI\bin\GUI.dll.config
+D:\xddt\setuplai\Solution1\GUI\bin\GUI.dll
+D:\xddt\setuplai\Solution1\GUI\bin\GUI.pdb
+D:\xddt\setuplai\Solution1\GUI\bin\ClassLibrary1.dll
+D:\xddt\setuplai\Solution1\GUI\bin\Microsoft.Office.Interop.Excel.dll
+D:\xddt\setuplai\Solution1\GUI\bin\XuLy.dll
+D:\xddt\setuplai\Solution1\GUI\bin\stdole.dll
+D:\xddt\setuplai\Solution1\GUI\bin\ClassLibrary1.pdb
+D:\xddt\setuplai\Solution1\GUI\bin\ClassLibrary1.dll.config
+D:\xddt\setuplai\Solution1\GUI\bin\XuLy.pdb
+D:\xddt\setuplai\Solution1\GUI\obj\Release\GUI.csprojAssemblyReference.cache
+D:\xddt\setuplai\Solution1\GUI\obj\Release\GUI.csproj.ResolveComReference.cache
+D:\xddt\setuplai\Solution1\GUI\obj\Release\GUI.csproj.CoreCompileInputs.cache
+D:\xddt\setuplai\Solution1\GUI\obj\Release\GUI.csproj.CopyComplete
+D:\xddt\setuplai\Solution1\GUI\obj\Release\GUI.dll
+D:\xddt\setuplai\Solution1\GUI\obj\Release\GUI.pdb

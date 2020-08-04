@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="qlhocbong" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-S1LN3QF\SQLEXPRESS;Initial Catalog=qlhocbong;Integrated Security=True" SettingsObjectName="ClassLibrary1.Properties.Settings" SettingsPropertyName="qlhocbongConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tlb_bomon" Member="tlb_bomons">
+    <Type Name="tlb_bomon">
+      <Column Name="ma_bm" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ten_bn" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tlb_bomon_tlb_nganh" Member="tlb_nganhs" AccessModifier="Internal" ThisKey="ma_bm" OtherKey="ma_bm" Type="tlb_nganh" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tlb_user" Member="tlb_users">
+    <Type Name="tlb_user">
+      <Column Name="tentk" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="mk" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="quyen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tlb_diemhk" Member="tlb_diemhks">
+    <Type Name="tlb_diemhk">
+      <Column Name="Mabangdiem" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MSSV" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="HK" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Namhoc" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DiemTB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DiemRL" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Xeploai" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="tlb_sinhvien_tlb_diemhk" Member="tlb_sinhvien" ThisKey="MSSV" OtherKey="MaSV" Type="tlb_sinhvien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tlb_hocbong" Member="tlb_hocbongs">
+    <Type Name="tlb_hocbong">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaSV" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="hoancanh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="dienkhokhan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="hientrang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="STKNH" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TenNH" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="tlb_sinhvien_tlb_hocbong" Member="tlb_sinhvien" ThisKey="MaSV" OtherKey="MaSV" Type="tlb_sinhvien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tlb_lop" Member="tlb_lops">
+    <Type Name="tlb_lop">
+      <Column Name="MaLop" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Tenlop" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ma_nganh" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="tlb_lop_tlb_sinhvien" Member="tlb_sinhviens" AccessModifier="Internal" ThisKey="MaLop" OtherKey="MaLop" Type="tlb_sinhvien" />
+      <Association Name="tlb_nganh_tlb_lop" Member="tlb_nganh" ThisKey="ma_nganh" OtherKey="ma_nganh" Type="tlb_nganh" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tlb_nganh" Member="tlb_nganhs">
+    <Type Name="tlb_nganh">
+      <Column Name="ma_nganh" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ten_nganh" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ma_bm" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="tlb_nganh_tlb_lop" Member="tlb_lops" AccessModifier="Internal" ThisKey="ma_nganh" OtherKey="ma_nganh" Type="tlb_lop" />
+      <Association Name="tlb_bomon_tlb_nganh" Member="tlb_bomon" ThisKey="ma_bm" OtherKey="ma_bm" Type="tlb_bomon" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tlb_sinhvien" Member="tlb_sinhviens">
+    <Type Name="tlb_sinhvien">
+      <Column Name="MaSV" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenSV" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Gioitinh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenCVHT" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MaLop" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="tlb_sinhvien_tlb_diemhk" Member="tlb_diemhks" AccessModifier="Internal" ThisKey="MaSV" OtherKey="MSSV" Type="tlb_diemhk" />
+      <Association Name="tlb_sinhvien_tlb_hocbong" Member="tlb_hocbongs" AccessModifier="Internal" ThisKey="MaSV" OtherKey="MaSV" Type="tlb_hocbong" />
+      <Association Name="tlb_lop_tlb_sinhvien" Member="tlb_lop" ThisKey="MaLop" OtherKey="MaLop" Type="tlb_lop" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

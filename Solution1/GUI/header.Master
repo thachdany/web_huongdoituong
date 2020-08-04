@@ -1,0 +1,197 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="header.master.cs" Inherits="GUI.header" %>
+<%@ Register Src="~/logincontrol.ascx" TagPrefix="UC" TagName="login" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+   
+
+      <title>QLHB KTCN</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/bootstrap-dropdownhover.css" rel="stylesheet">
+    <script src="js/bootstrap-dropdownhover.js"></script>
+    <script src="js/js.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/animate.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color: #f2f2f2" >
+    <div class="container">
+        <div class="row">
+            <div class="container baner" style="background-color: white">
+                <img src="img/tvu.png" style="width: 100%" />
+            </div>
+        </div>
+        <div class="row">
+            <form id="form11" runat="server">
+                <div class="container menu">
+                    <nav class="navbar navbar-inverse" style="border-radius: 0">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <%--<a class="navbar-brand" href="trangchu.aspx">WebSiteName</a>--%>
+                            </div>
+                            <div class="collapse navbar-collapse" id="myNavbar">
+                                <ul class="nav navbar-nav">
+                                    <li class="active" style="background-color: orange"><a href="trangchu.aspx">TRANG CHỦ</a></li>
+                                    <li class="dropdown"  >
+                                        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-animations="fadeInRight zoomIn zoomIn fadeInRight" href="#">XEM TTSV <span class="caret"></span></a>
+                                        <ul class="dropdown-menu" style="color:white ; opacity: 1" />
+
+                                        <li><a href="xemttsv.aspx" style="color:black ">XEM TTSV</a></li>
+                                        <li><a href="xemdiem.aspx" style="color:black">XEM ĐIỂM</a></li>
+                                </ul>
+                                </li> 
+                                <%
+                                    int quyen = Convert.ToInt32(Session["quyen"]); ;
+                                    if (quyen == 1)
+                                    {
+                                        
+                                   
+                                %>
+                                <li class="dropdown  ">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-animations="fadeInRight zoomIn zoomIn fadeInRight" href="#">QUẢN LÍ ĐIỂM HK<span class="caret"></span></a>
+                                    <ul class="dropdown-menu" style="background-color: black; opacity: .8" />
+                                    <li><a href="quanlidiemhk.aspx" style="color: white">ĐIỂM</a></li>
+                                    </ul>
+                                </li>
+                                <%
+                                    }
+                            
+                                %>
+                                <li><a href="xemhocbong.aspx">XEM HỌC BỔNG</a></li>
+
+                                <%
+                                   
+                                    if (quyen == 1)
+                                    {
+                                        %>
+                                        <li><a href="suattcanhan.aspx">SỬA TT CÁ NHÂN</a></li>
+                                        <li><a href="qlhocbongonl.aspx">QUẢN LÍ HB ONLINE</a></li>
+                                        <%
+                                    }
+                            
+                                %>>    
+                                
+                                  <%
+                                       if (quyen == 4 )
+                                    {
+                                         %>              
+                                            <li><a href="dkxethb.aspx">ĐK XÉT HB</a></li>
+                                         <%
+                                    }
+                                  %>
+
+                                </ul>
+                                
+                                <ul class="nav navbar-nav navbar-right">
+                                    <%
+                                        if (Session["tentk"] != null)
+                                        {
+                                
+                                    %>
+                                    <li class="dropdown  ">
+                                        
+                                        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-animations="fadeInRight zoomIn zoomIn fadeInRight" href="#" style="font-size: 12.7px"><span class="glyphicon glyphicon-user"></span>Xin chào: <%=Session["ten"]%>(<%=Session["tentk"] %>)</a>
+                                        <ul class="dropdown-menu" style="background-color: black; opacity: .8" />
+                                        <li><a href="suatttk.aspx" style="color: white">Đổi mật khẩu</a></li>
+                                        <li><a href="xu_lilogout.aspx" style="color: white"><span class="glyphicon glyphicon-log-in" style="color: white"></span>Đăng Xuất</a></li>
+                                        </ul>
+                                     </li>                                 
+                                
+
+
+                                <%
+                                        }
+
+
+                                        else
+                                        {
+                                %>
+
+                                <li><a href="dangnhap.aspx" class=""><span class="glyphicon glyphicon-user"></span>Đăng Nhập</a></li>
+
+                                <%
+                                        } 
+                                %>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+
+
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </form>
+           
+        </div>
+    </div>
+
+    <footer id="footer">   
+	<div class="container-fluid">
+		<div class="" style="border-radius: 0;margin-top:10px">
+			<div class="container">
+				<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">				
+					<p style="font-size: 15px;padding:5px;padding-top:10px;color:#808080">KHOA KỸ THUẬT & CÔNG NGHỆ
+                                                                        <br />Địa chỉ :  Số 126 Nguyễn Thiện Thành, Khóm 4, Phường 5, TP. Trà Vinh, tỉnh Trà Vinh 
+                                                                        <br />Điện thoại :  0294.3855690 – 135 
+                                                                        <br />Email :  ktcn@tvu.edu.vn 
+					</p>
+                    
+				</div> 
+                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                    <a class="on_top" href="#top" style="display: block; right: 28px; bottom: 10px;"><i class="glyphicon glyphicon-upload"></i></a>
+                </div>
+			</div>
+            <div class="container" style="font-size: 15px;padding:5px;padding-top:10px;color:#808080">
+                   <center><p>Copyright © 2019 Bài báo cáo kết thúc môn XDPM HDT Nhóm 6, Lớp DA16TT</p></center>
+
+            </div>
+            
+			
+		</div>		
+	</div>
+        
+</footer>
+      
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#on_top').fadeIn();
+                } else {
+                    $('#on_top').fadeOut();
+                }
+            });
+            $('#on_top').click(function () {
+                $("html, body").animate({ scrollTop: 0 }, 10000);
+                return false;
+            });
+        });
+    </script>
+  </body>
+
+</html>
